@@ -127,6 +127,8 @@ class DataWrapperBase(ABC):
         """
         tmp_label_names = []
         for dataset_path in dataset_paths:
+            print("debug---")
+            print(dataset_path)
             dataset_label_names = []
 
             if self.args.add_null_class:
@@ -135,6 +137,8 @@ class DataWrapperBase(ABC):
             for name in sorted([c.name for c in dataset_path.glob("*")]):
                 if name[0] != "_":
                     dataset_label_names.append(name)
+
+            print(dataset_label_names)
             tmp_label_names.append(dataset_label_names)
 
         assert len(set(map(tuple, tmp_label_names))) == 1, "Different labels for each sub-dataset directory"

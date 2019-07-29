@@ -12,7 +12,7 @@ popd
 
 # split data
 output_dir=${work_dir}/splitted_data
-python google_speech_commmands_dataset_to_our_format_with_split.py \
+python3 google_speech_commmands_dataset_to_our_format_with_split.py \
     --input_dir `realpath ${work_dir}` \
     --train_list_fullpath train.txt \
     --valid_list_fullpath valid.txt \

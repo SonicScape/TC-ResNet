@@ -12,6 +12,7 @@ class AudioDataWrapper(DataWrapperBase):
         self, args, session, dataset_split_name, is_training, name: str="AudioDataWrapper"
     ):
         super().__init__(args, dataset_split_name, is_training, name)
+        print('debug:'+dataset_split_name)
         self.setup()
 
         self.setup_dataset(self.placeholders)
@@ -119,8 +120,11 @@ class SingleLabelAudioDataWrapper(AudioDataWrapper):
 
     def setup(self):
         dataset_paths = self.get_all_dataset_paths()
+        print(dataset_paths)
+        #print('debug:'+dataset_paths[0])
         self.label_names, self.num_labels = self.get_label_names(dataset_paths)
         assert const.NULL_CLASS_LABEL in self.label_names
+        print('debug:'+'num_classes=%d,num_labels=%d' % (self.args.num_classes,self.num_labels))
         assert self.args.num_classes == self.num_labels
 
         self.filenames, self.labels = self.get_filenames_labels(dataset_paths)
