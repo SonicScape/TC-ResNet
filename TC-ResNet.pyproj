@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4f1c0b33-f640-4ec4-bac5-9f75b6e5e67c}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>train_audio.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="audio_nets\ds_cnn.py" />
+    <Compile Include="audio_nets\kws.py" />
+    <Compile Include="audio_nets\res.py" />
+    <Compile Include="audio_nets\tc_resnet.py" />
+    <Compile Include="common\model_loader.py" />
+    <Compile Include="common\tf_utils.py" />
+    <Compile Include="common\utils.py" />
+    <Compile Include="common\__init__.py" />
+    <Compile Include="const.py" />
+    <Compile Include="datasets\audio_data_wrapper.py" />
+    <Compile Include="datasets\augmentation_factory.py" />
+    <Compile Include="datasets\data_wrapper_base.py" />
+    <Compile Include="datasets\preprocessors.py" />
+    <Compile Include="datasets\preprocessor_factory.py" />
+    <Compile Include="datasets\__init__.py" />
+    <Compile Include="evaluate_audio.py" />
+    <Compile Include="factory\audio_nets.py" />
+    <Compile Include="factory\base.py" />
+    <Compile Include="factory\__init__.py" />
+    <Compile Include="freeze.py" />
+    <Compile Include="helper\base.py" />
+    <Compile Include="helper\evaluator.py" />
+    <Compile Include="helper\trainer.py" />
+    <Compile Include="helper\__init__.py" />
+    <Compile Include="metrics\base.py" />
+    <Compile Include="metrics\funcs.py" />
+    <Compile Include="metrics\manager.py" />
+    <Compile Include="metrics\ops\base_ops.py" />
+    <Compile Include="metrics\ops\misc_ops.py" />
+    <Compile Include="metrics\ops\non_tensor_ops.py" />
+    <Compile Include="metrics\ops\tensor_ops.py" />
+    <Compile Include="metrics\ops\__init__.py" />
+    <Compile Include="metrics\parser.py" />
+    <Compile Include="metrics\summaries.py" />
+    <Compile Include="metrics\__init__.py" />
+    <Compile Include="scripts\google_speech_commmands_dataset_to_our_format.py" />
+    <Compile Include="speech_commands_dataset\google_speech_commmands_dataset_to_our_format_with_split.py" />
+    <Compile Include="train_audio.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="figure\main_figure.png" />
+    <Content Include="requirements\py36-common.txt" />
+    <Content Include="requirements\py36-cpu.txt" />
+    <Content Include="requirements\py36-gpu.txt" />
+    <Content Include="speech_commands_dataset\test.txt" />
+    <Content Include="speech_commands_dataset\train.txt" />
+    <Content Include="speech_commands_dataset\valid.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="audio_nets" />
+    <Folder Include="common" />
+    <Folder Include="datasets" />
+    <Folder Include="factory" />
+    <Folder Include="figure" />
+    <Folder Include="helper" />
+    <Folder Include="metrics" />
+    <Folder Include="metrics\ops" />
+    <Folder Include="requirements" />
+    <Folder Include="scripts" />
+    <Folder Include="speech_commands_dataset" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
